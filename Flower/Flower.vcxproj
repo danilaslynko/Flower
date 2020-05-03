@@ -148,9 +148,27 @@
     <ClInclude Include="Sunflower.h" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MyForm.resx">
-      <DependentUpon>MyForm.h</DependentUpon>
-    </EmbeddedResource>
+    <Image Include="..\Pictures\Flower\Spring\FlowerSpringDay.png" />
+    <Image Include="..\Pictures\Flower\Spring\FlowerSpringFrozen.png" />
+    <Image Include="..\Pictures\Flower\Spring\FlowerLittle.png" />
+    <Image Include="..\Pictures\Flower\Spring\FlowerMiddle.png" />
+    <Image Include="..\Pictures\Flower\Spring\FlowerSpringNight.png" />
+    <Image Include="..\Pictures\Flower\Summer\FlowerSummerDay.png" />
+    <Image Include="..\Pictures\Flower\Summer\FlowerDead.png" />
+    <Image Include="..\Pictures\Flower\Summer\FlowerSummerNight.png" />
+    <Image Include="..\Pictures\Flower\Summer\FlowerГусеничка.png" />
+    <Image Include="..\Pictures\Flower\Winter\FlowerFrozen.png" />
+    <Image Include="..\Pictures\Sunflower\Autumn\SunFlowerAutumnFrozen.png" />
+    <Image Include="..\Pictures\Sunflower\Autumn\SunFlowerWithSeeds.png" />
+    <Image Include="..\Pictures\Sunflower\Autumn\SunFlowerWithoutSeeds.png" />
+    <Image Include="..\Pictures\Sunflower\Spring\SunFlowerSpringDay.png" />
+    <Image Include="..\Pictures\Sunflower\Spring\SunFlowerSpringFrozen.png" />
+    <Image Include="..\Pictures\Sunflower\Spring\SunFlowerSpringNight.png" />
+    <Image Include="..\Pictures\Sunflower\Summer\SunFlowerSummerDay.png" />
+    <Image Include="..\Pictures\Sunflower\Summer\SunFlowerDead.png" />
+    <Image Include="..\Pictures\Sunflower\Summer\SunFlowerSummerNight.png" />
+    <Image Include="..\Pictures\Sunflower\Winter\SunFlowerWinterFrozen.png" />
+    <Image Include="..\Pictures\Sunflower\SunFlowerГусеничка.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

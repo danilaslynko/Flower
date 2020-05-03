@@ -105,9 +105,7 @@ public:
 			Random^ rnd = gcnew Random();
 			this->chance = rnd->Next(0, 100);
  			if (this->chance < treshold) {
-				Alive = false;
-				Progress = 0;
-				FlowerIsDead(this, "C:\\Users\\Вдаделец\\Pictures\\Flower\\Summer\\Гусеничка.png", "Цветочек съела гусеница :(");
+				this->eat();
 			}
 		}
 		int get() {
@@ -126,6 +124,8 @@ public:
 	virtual void water();
 	// Найти новый цветочек
 	virtual void findNewFlower();
+	// Съедание гусеницей
+	virtual void eat();
 	// Дегидрация
 	void degidrate();
 	// Расти

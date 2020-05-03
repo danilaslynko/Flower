@@ -11,6 +11,7 @@ public:
 	virtual void findNewFlower() override;
 	virtual void changeTime(TimesOfDay dayTime) override;
 	virtual void water() override;
+	virtual void eat() override;
 	// Новые методы
 	void takeSeeds();
 };

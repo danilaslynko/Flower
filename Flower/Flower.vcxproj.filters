@@ -15,13 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MyForm.cpp">
-      <Filter>Файлы ресурсов</Filter>
-    </ClCompile>
     <ClCompile Include="Sunflower.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Flower.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="MyForm.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -40,5 +40,70 @@
     <EmbeddedResource Include="MyForm.resx">
       <Filter>Файлы ресурсов</Filter>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Pictures\Sunflower\Summer\SunFlowerSummerDay.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\Pictures\Sunflower\Spring\SunFlowerSpringDay.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\Pictures\Flower\Summer\FlowerSummerDay.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\Pictures\Flower\Spring\FlowerSpringDay.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\Pictures\Sunflower\Summer\SunFlowerDead.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\Pictures\Flower\Summer\FlowerDead.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\Pictures\Sunflower\Winter\SunFlowerWinterFrozen.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\Pictures\Sunflower\Spring\SunFlowerSpringFrozen.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\Pictures\Sunflower\Autumn\SunFlowerAutumnFrozen.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\Pictures\Flower\Spring\FlowerSpringFrozen.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\Pictures\Flower\Winter\FlowerFrozen.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\Pictures\Flower\Spring\FlowerLittle.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\Pictures\Flower\Spring\FlowerMiddle.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\Pictures\Sunflower\Summer\SunFlowerSummerNight.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\Pictures\Sunflower\Spring\SunFlowerSpringNight.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\Pictures\Flower\Summer\FlowerSummerNight.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\Pictures\Flower\Spring\FlowerSpringNight.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\Pictures\Sunflower\Autumn\SunFlowerWithSeeds.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\Pictures\Sunflower\Autumn\SunFlowerWithoutSeeds.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\Pictures\Flower\Summer\FlowerГусеничка.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\Pictures\Sunflower\SunFlowerГусеничка.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
   </ItemGroup>
 </Project>

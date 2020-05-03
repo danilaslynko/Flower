@@ -6,7 +6,7 @@ SFlower::SFlower() {
 	this->Temperature::set(FINE);
 	this->DayTime::set(DAY);
 	this->Alive::set(true);
-	this->Path::set("C:\\Users\\Вдаделец\\Pictures\\Sunflower\\Summer\\Day.png");
+	this->Path::set("..\\Pictures\\Sunflower\\Summer\\SunFlowerSummerDay.png");
 }
 
 SFlower::~SFlower()
@@ -19,28 +19,28 @@ void SFlower::conditionCheck()
 	{
 	case WINTER:
 		Alive = false;
-		FlowerIsDead(this, "C:\\Users\\Вдаделец\\Pictures\\Sunflower\\Winter\\Frozen.png", "Зимой подсолнуху плохо :(");
+		FlowerIsDead(this, "..\\Pictures\\Sunflower\\Winter\\SunFlowerWinterFrozen.png", "Зимой подсолнуху плохо :(");
 		break;
 	case SPRING:
 		if (Temperature == COLD) {
 			Alive = false;
-			FlowerIsDead(this, "C:\\Users\\Вдаделец\\Pictures\\Sunflower\\Spring\\Frozen.png", "Подсолнух замерз :(");
+			FlowerIsDead(this, "..\\Pictures\\Sunflower\\Spring\\SunFlowerSpringFrozen.png", "Подсолнух замерз :(");
 		}
 		break;
 	case SUMMER:
 		if (Progress == 30) {
 			Alive = false;
-			FlowerIsDead(this, "C:\\Users\\Вдаделец\\Pictures\\Sunflower\\Summer\\Dead.png", "Подсолнух засох :(");
+			FlowerIsDead(this, "..\\Pictures\\Sunflower\\Summer\\SunFlowerDead.png", "Подсолнух засох :(");
 		}
 		break;
 	case AUTUMN:
 		if (Temperature == COLD) {
 			Alive = false;
-			FlowerIsDead(this, "C:\\Users\\Вдаделец\\Pictures\\Sunflower\\Autumn\\Frozen.png", "Холодная нынче осень, цветочек замерз :(");
+			FlowerIsDead(this, "..\\Pictures\\Sunflower\\Autumn\\SunFlowerAutumnFrozen.png", "Холодная нынче осень, цветочек замерз :(");
 		}
 		else {
 			if (Progress == 30) {
-				FlowerGrown(this, "C:\\Users\\Вдаделец\\Pictures\\Sunflower\\Autumn\\WSeeds.png");
+				FlowerGrown(this, "..\\Pictures\\Sunflower\\Autumn\\SunFlowerWithSeeds.png");
 			}
 		}
 		break;
@@ -56,22 +56,22 @@ void SFlower::findNewFlower()
 	{
 	case SPRING:
 		if (this->DayTime == DAY) {
-			this->Path = "C:\\Users\\Вдаделец\\Pictures\\Sunflower\\Spring\\Day.png";
+			this->Path = "..\\Pictures\\Sunflower\\Spring\\SunFlowerSpringDay.png";
 		}
 		else {
-			this->Path = "C:\\Users\\Вдаделец\\Pictures\\Sunflower\\Spring\\Night.png";
+			this->Path = "..\\Pictures\\Sunflower\\Spring\\SunFlowerSpringNight.png";
 		}
 		break;
 	case SUMMER:
 		if (this->DayTime == DAY) {
-			this->Path = "C:\\Users\\Вдаделец\\Pictures\\Sunflower\\Summer\\Day.png";
+			this->Path = "..\\Pictures\\Sunflower\\Summer\\SunFlowerSummerDay.png";
 		}
 		else {
-			this->Path = "C:\\Users\\Вдаделец\\Pictures\\Sunflower\\Summer\\Night.png";
+			this->Path = "..\\Pictures\\Sunflower\\Summer\\SunFlowerSummerNight.png";
 		}
 		break;
 	case AUTUMN:
-		this->Path = "C:\\Users\\Вдаделец\\Pictures\\Sunflower\\Autumn\\WSeeds.png";
+		this->Path = "..\\Pictures\\Sunflower\\Autumn\\SunFlowerWithoutSeeds.png";
 		break;
 	default:
 		break;
@@ -84,18 +84,18 @@ void SFlower::changeTime(TimesOfDay dayTime)
 		this->DayTime = dayTime;
 		if (Season == SUMMER) {
 			if (DayTime == DAY) {
-				DayChange(this, "C:\\Users\\Вдаделец\\Pictures\\Sunflower\\Summer\\Day.png");
+				DayChange(this, "..\\Pictures\\Sunflower\\Summer\\SunFlowerSummerDay.png");
 			}
 			if (DayTime == NIGHT) {
-				DayChange(this, "C:\\Users\\Вдаделец\\Pictures\\Sunflower\\Summer\\Night.png");
+				DayChange(this, "..\\Pictures\\Sunflower\\Summer\\SunFlowerSummerNight.png");
 			}
 		}
 		if (Season == SPRING) {
 			if (DayTime == DAY) {
-				DayChange(this, "C:\\Users\\Вдаделец\\Pictures\\Sunflower\\Spring\\Day.png");
+				DayChange(this, "..\\Pictures\\Sunflower\\Spring\\SunFlowerSpringDay.png");
 			}
 			if (DayTime == NIGHT) {
-				DayChange(this, "C:\\Users\\Вдаделец\\Pictures\\Sunflower\\Spring\\Night.png");
+				DayChange(this, "..\\Pictures\\Sunflower\\Spring\\SunFlowerSpringNight.png");
 			}
 		}
 	}
@@ -111,13 +111,20 @@ void SFlower::water()
 	}
 }
 
+void SFlower::eat()
+{
+	Alive = false;
+	Progress = 0;
+	FlowerIsDead(this, "..\\Pictures\\Sunflower\\SunFlowerГусеничка.png", "Цветочек съела гусеница :(");
+}
+
 void SFlower::takeSeeds()
 {
 	if (Progress == 30) {
 		Progress = 0;
-		Seeds(this, "C:\\Users\\Вдаделец\\Pictures\\Sunflower\\Autumn\\WSeeds.png", "Семечки собраны!");
+		Seeds(this, "..\\Pictures\\Sunflower\\Autumn\\SunFlowerWithoutSeeds.png", "Семечки собраны!");
 	}
 	else {
-		Seeds(this, "C:\\Users\\Вдаделец\\Pictures\\Sunflower\\Autumn\\WSeeds.png", "А не рановато ли?");
+		Seeds(this, "..\\Pictures\\Sunflower\\Autumn\\SunFlowerWithoutSeeds.png", "А не рановато ли?");
 	}
 }
