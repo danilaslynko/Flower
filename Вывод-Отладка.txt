@@ -1,0 +1,94 @@
+﻿"Flower.exe" (Win32). Загружено "C:\Users\Natalya\Desktop\Flower2\Flower\x64\Debug\Flower.exe". Символы загружены.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\ntdll.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\mscoree.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\kernel32.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\KernelBase.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\ucrtbased.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\vcruntime140d.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\msvcp140d.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\advapi32.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\msvcrt.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\sechost.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\rpcrt4.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\mscoreei.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\shlwapi.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\combase.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\ucrtbase.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\bcryptprimitives.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\gdi32.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\gdi32full.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\msvcp_win.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\user32.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\win32u.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\imm32.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\kernel.appcore.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\version.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\clr.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\msvcr120_clr0400.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\psapi.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Выгружено "C:\Windows\System32\psapi.dll"
+"Flower.exe" (Win32). Загружено "C:\Windows\assembly\NativeImages_v4.0.30319_64\mscorlib\34d3daa41387618390516025073e6ef2\mscorlib.ni.dll". 
+"Flower.exe" (CLR v4.0.30319: DefaultDomain). Загружено "C:\WINDOWS\Microsoft.Net\assembly\GAC_64\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll". Загрузка символов пропущена. Модуль оптимизирован, включен параметр отладчика "Только мой код".
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\ole32.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\uxtheme.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (CLR v4.0.30319: DefaultDomain). Загружено "C:\Users\Natalya\Desktop\Flower2\Flower\x64\Debug\Flower.exe". Символы загружены.
+"Flower.exe" (Win32). Загружено "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\clrjit.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\diasymreader.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\assembly\NativeImages_v4.0.30319_64\System\8adef6997900af2919dbffba8118dde4\System.ni.dll". 
+"Flower.exe" (CLR v4.0.30319: DefaultDomain). Загружено "C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll". Загрузка символов пропущена. Модуль оптимизирован, включен параметр отладчика "Только мой код".
+"Flower.exe" (Win32). Загружено "C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Drawing\b884dd3b61e13851a409b6b722f75a1f\System.Drawing.ni.dll". 
+"Flower.exe" (Win32). Загружено "C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Windows.Forms\c8a9d86302b45b0b5d88a570cf8a28eb\System.Windows.Forms.ni.dll". 
+"Flower.exe" (CLR v4.0.30319: Flower.exe). Загружено "C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Windows.Forms\v4.0_4.0.0.0__b77a5c561934e089\System.Windows.Forms.dll". Загрузка символов пропущена. Модуль оптимизирован, включен параметр отладчика "Только мой код".
+"Flower.exe" (CLR v4.0.30319: Flower.exe). Загружено "C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Drawing\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Drawing.dll". Загрузка символов пропущена. Модуль оптимизирован, включен параметр отладчика "Только мой код".
+Поток 0x1a60 завершился с кодом 0 (0x0).
+CLR:(C:\WINDOWS\Microsoft.Net\assembly\GAC_64\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll) Rejecting native image because native image dependency C:\WINDOWS\Microsoft.Net\assembly\GAC_64\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll had a different identity than expected
+"Flower.exe" (Win32). Загружено "C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Core\fdebc1f54b694adacd50abcd8e2c6224\System.Core.ni.dll". 
+"Flower.exe" (Win32). Загружено "C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Configuration\0132f86d95ecfb9ba65389339f592f5d\System.Configuration.ni.dll". 
+"Flower.exe" (CLR v4.0.30319: Flower.exe). Загружено "C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll". Загрузка символов пропущена. Модуль оптимизирован, включен параметр отладчика "Только мой код".
+"Flower.exe" (CLR v4.0.30319: Flower.exe). Загружено "C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll". Загрузка символов пропущена. Модуль оптимизирован, включен параметр отладчика "Только мой код".
+"Flower.exe" (Win32). Загружено "C:\Windows\assembly\NativeImages_v4.0.30319_64\System.Xml\8565247cc62cd2d675b58af68afccf07\System.Xml.ni.dll". 
+"Flower.exe" (CLR v4.0.30319: Flower.exe). Загружено "C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.dll". Загрузка символов пропущена. Модуль оптимизирован, включен параметр отладчика "Только мой код".
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\shell32.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\cfgmgr32.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\SHCore.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\windows.storage.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\profapi.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\powrprof.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\fltLib.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\bcrypt.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\cryptsp.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\rsaenh.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\cryptbase.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_5.82.17134.1006_none_557373d72661c24e\comctl32.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\dwmapi.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\WinSxS\amd64_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.17134.1006_none_04e6abdcd726860d\GdiPlus.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\DWrite.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\msctf.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\oleaut32.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\WindowsCodecs.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.17134.1006_none_d3fbb8f77c940c3f\comctl32.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\TextInputFramework.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\CoreUIComponents.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\CoreMessaging.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\ntmarta.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\WinTypes.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Загружено "C:\Windows\System32\WinTypes.dll". Невозможно найти или открыть PDB-файл.
+"Flower.exe" (Win32). Выгружено "C:\Windows\System32\WinTypes.dll"
+"Flower.exe" (Win32). Загружено "C:\Windows\Microsoft.NET\assembly\GAC_MSIL\mscorlib.resources\v4.0_4.0.0.0_ru_b77a5c561934e089\mscorlib.resources.dll". Сборка модуля выполнена без символов.
+"Flower.exe" (Win32). Загружено "C:\Windows\Microsoft.NET\assembly\GAC_MSIL\mscorlib.resources\v4.0_4.0.0.0_ru_b77a5c561934e089\mscorlib.resources.dll". Сборка модуля выполнена без символов.
+"Flower.exe" (Win32). Выгружено "C:\Windows\Microsoft.NET\assembly\GAC_MSIL\mscorlib.resources\v4.0_4.0.0.0_ru_b77a5c561934e089\mscorlib.resources.dll"
+"Flower.exe" (CLR v4.0.30319: Flower.exe). Загружено "C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\mscorlib.resources\v4.0_4.0.0.0_ru_b77a5c561934e089\mscorlib.resources.dll". Сборка модуля выполнена без символов.
+Поток 0xfdc завершился с кодом 0 (0x0).
+Поток 0x2aa4 завершился с кодом 0 (0x0).
+Поток 0x1750 завершился с кодом 0 (0x0).
+Поток 0x1498 завершился с кодом 0 (0x0).
+Поток 0x2cc8 завершился с кодом 0 (0x0).
+Поток 0x3844 завершился с кодом 0 (0x0).
+Поток 0xa80 завершился с кодом 0 (0x0).
+Поток 0x808 завершился с кодом 0 (0x0).
+Поток 0x1864 завершился с кодом 0 (0x0).
+Поток 0x1728 завершился с кодом 0 (0x0).
+Поток 0x20bc завершился с кодом 0 (0x0).
+Поток 0x2514 завершился с кодом 0 (0x0).
+Поток 0x32b0 завершился с кодом 0 (0x0).
+Программа "[13988] Flower.exe" завершилась с кодом 0 (0x0).
