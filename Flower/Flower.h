@@ -127,11 +127,11 @@ public:
 	// Съедание гусеницей
 	virtual void eat();
 	// Дегидрация
-	void degidrate();
+	virtual void degidrate();
 	// Расти
-	void grow();
+	virtual void grow();
 	// Смена времени суток
 	virtual void changeTime(TimesOfDay dayTime);
-	// Информация о цветочке
-	virtual void conditionCheck();
+	// Проверка состояния цветка
+	virtual void changeSeason(Seasons season);
 };

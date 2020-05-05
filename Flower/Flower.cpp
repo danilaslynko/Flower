@@ -60,7 +60,10 @@ void Flowers::eat()
 {
 	Alive = false;
 	Progress = 0;
-	FlowerIsDead(this, "..\\Pictures\\Flower\\Summer\\FlowerГусеничка.png", "Цветочек съела гусеница :(");
+	FlowerIsDead(
+		this,
+		"..\\Pictures\\Flower\\Summer\\FlowerГусеничка.png",
+		"Цветочек съела гусеница :(");
 }
 
 void Flowers::degidrate()
@@ -70,6 +73,12 @@ void Flowers::degidrate()
 	}
 	if (Progress > 30) {
 		Progress = 30;
+	}
+	if (Progress == 30) {
+		Alive = false;
+		FlowerIsDead(
+			this,
+			"..\\Pictures\\Flower\\Summer\\FlowerDead.png", "Цветочек засох :(");
 	}
 }
 
@@ -85,6 +94,26 @@ void Flowers::grow()
 	}
 	else {
 		Progress = 0;
+		Alive = false;
+		FlowerIsDead(
+			this,
+			"..\\Pictures\\Flower\\Spring\\FlowerSpringFrozen.png",
+			"Цветочек замерз :(");
+	}
+	if (Progress == 18) {
+		FlowerGrown(
+			this,
+			"..\\Pictures\\Flower\\Spring\\FlowerMiddle.png");
+	}
+	if (Progress == 30 && DayTime == DAY) {
+		FlowerGrown(
+			this,
+			"..\\Pictures\\Flower\\Spring\\FlowerSpringDay.png");
+	}
+	if (Progress == 30 && DayTime == NIGHT) {
+		FlowerGrown(
+			this,
+			"..\\Pictures\\Flower\\Spring\\FlowerSpringNight.png");
 	}
 }
 
@@ -94,59 +123,56 @@ void Flowers::changeTime(TimesOfDay dayTime)
 		this->DayTime = dayTime;
 		if (Season == SUMMER) {
 			if (DayTime == DAY) {
-				DayChange(this, "..\\Pictures\\Flower\\Summer\\FlowerSummerDay.png");
+				DayChange(
+					this,
+					"..\\Pictures\\Flower\\Summer\\FlowerSummerDay.png");
 			}
 			if (DayTime == NIGHT) {
-				DayChange(this, "C..\\Pictures\\Flower\\Summer\\FlowerSummerNight.png");
+				DayChange(
+					this,
+					"C..\\Pictures\\Flower\\Summer\\FlowerSummerNight.png");
 			}
 		}
 		if (Season == SPRING && Progress == 30) {
 			if (DayTime == DAY) {
-				DayChange(this, "..\\Pictures\\Flower\\Spring\\FlowerSpringDay.png");
+				DayChange(
+					this,
+					"..\\Pictures\\Flower\\Spring\\FlowerSpringDay.png");
 			}
 			if (DayTime == NIGHT) {
-				DayChange(this, "..\\Pictures\\Flower\\Spring\\FlowerSpringNight.png");
+				DayChange(
+					this,
+					"..\\Pictures\\Flower\\Spring\\FlowerSpringNight.png");
 			}
 		}
 	}
 }
 
-void Flowers::conditionCheck()
+void Flowers::changeSeason(Seasons season)
 {
+	this->Season = season;
 	switch (Season)
 	{
 	case WINTER:
 		Alive = false;
-		FlowerIsDead(this, "..\\Pictures\\Flower\\Winter\\FlowerFrozen.png", "Зимой цветы не растут");
-		break;
-	case SPRING:
-		if (Progress == 18) {
-			FlowerGrown(this, "..\\Pictures\\Flower\\Spring\\FlowerMiddle.png");
-		}
-		if (Progress == 30 && DayTime == DAY) {
-			FlowerGrown(this, "..\\Pictures\\Flower\\Spring\\FlowerSpringDay.png");
-		} 
-		if (Progress == 30 && DayTime == NIGHT) {
-			FlowerGrown(this, "..\\Pictures\\Flower\\Spring\\FlowerSpringNight.png");
-		}
-		if (Temperature == COLD) {
-			Alive = false;
-			FlowerIsDead(this, "..\\Pictures\\Flower\\Spring\\FlowerSpringFrozen.png", "Цветочек замерз :(");
-		}
-		break;
-	case SUMMER:
-		if (Progress == 30) {
-			Alive = false;
-			FlowerIsDead(this, "..\\Pictures\\Flower\\Summer\\FlowerDead.png", "Цветочек засох :(");
-		}
+		FlowerIsDead(
+			this,
+			"..\\Pictures\\Flower\\Winter\\FlowerFrozen.png",
+			"Зимой цветы не растут");
 		break;
 	case AUTUMN:
 		Alive = false;
 		if (Temperature == COLD) {
-			FlowerIsDead(this, "..\\Pictures\\Flower\\Winter\\FlowerFrozen.png", "Холодная нынче осень, цветочек замерз :(");
+			FlowerIsDead(
+				this,
+				"..\\Pictures\\Flower\\Winter\\FlowerFrozen.png",
+				"Холодная нынче осень, цветочек замерз :(");
 		}
 		else {
-			FlowerIsDead(this, "..\\Pictures\\Flower\\Summer\\FlowerDead.png", "Осенью цветы засыхают");
+			FlowerIsDead(
+				this,
+				"..\\Pictures\\Flower\\Summer\\FlowerDead.png",
+				"Осенью цветы засыхают");
 		}
 		break;
 	default:

@@ -53,7 +53,6 @@ System::Void Flower::MyForm::MyForm_Load(System::Object^ sender, System::EventAr
 System::Void Flower::MyForm::temperatureBarFlower_ValueChanged(System::Object^ sender, System::EventArgs^ e)
 {
 	pinkFlower->Temperature = (Temperatures)(temperatureBarFlower->Value);
-	pinkFlower->conditionCheck();
 	progressBar1->Value = pinkFlower->Progress;
 	
 	redraw(pinkFlower, pictureBox1);
@@ -62,14 +61,13 @@ System::Void Flower::MyForm::temperatureBarFlower_ValueChanged(System::Object^ s
 System::Void Flower::MyForm::dayTimeBarFlower_ValueChanged(System::Object^ sender, System::EventArgs^ e)
 {
 	pinkFlower->changeTime((TimesOfDay)(dayTimeBarFlower->Value));
-	pinkFlower->conditionCheck();
 
 	redraw(pinkFlower, pictureBox1);
 }
 
 System::Void Flower::MyForm::seasonBarFlower_ValueChanged(System::Object^ sender, System::EventArgs^ e)
 {
-	pinkFlower->Season = (Seasons)(this->seasonBarFlower->Value);
+	pinkFlower->changeSeason((Seasons)(this->seasonBarFlower->Value));
 	if (pinkFlower->Season == WINTER || pinkFlower->Season == AUTUMN) {
 		this->labelParamFlower->Text = "В мертвом цветке уже ничего не изменится...";
 		this->buttonNewFlower->Enabled = false;
@@ -86,7 +84,6 @@ System::Void Flower::MyForm::seasonBarFlower_ValueChanged(System::Object^ sender
 		this->buttonWaterFlower->Enabled = true;
 	}
 	pinkFlower->findNewFlower();
-	pinkFlower->conditionCheck();
 	progressBar1->Value = pinkFlower->Progress;
 
 	redraw(pinkFlower, pictureBox1);
@@ -107,7 +104,6 @@ System::Void Flower::MyForm::timer1_Tick(System::Object^ sender, System::EventAr
 				progressBar1->Value = pinkFlower->Progress;
 			}
 		}
-		pinkFlower->conditionCheck();
 	}
 
 	redraw(pinkFlower, pictureBox1);
@@ -116,7 +112,6 @@ System::Void Flower::MyForm::timer1_Tick(System::Object^ sender, System::EventAr
 System::Void Flower::MyForm::buttonNewFlower_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	pinkFlower->findNewFlower();
-	pinkFlower->conditionCheck();
 	progressBar1->Value = pinkFlower->Progress;
 
 	redraw(pinkFlower, pictureBox1);
@@ -125,7 +120,6 @@ System::Void Flower::MyForm::buttonNewFlower_Click(System::Object^ sender, Syste
 System::Void Flower::MyForm::buttonWaterFlower_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	pinkFlower->water();
-	pinkFlower->conditionCheck();
 	progressBar1->Value = pinkFlower->Progress;
 
 	redraw(pinkFlower, pictureBox1);
@@ -163,7 +157,6 @@ System::Void Flower::MyForm::timer2_Tick(System::Object^ sender, System::EventAr
 				progressBar2->Value = sunFlower->Progress;
 			}
 		}
-		sunFlower->conditionCheck();
 	}
 
 	redraw(sunFlower, pictureBox2);
@@ -172,7 +165,6 @@ System::Void Flower::MyForm::timer2_Tick(System::Object^ sender, System::EventAr
 System::Void Flower::MyForm::temperatureBarSunflower_ValueChanged(System::Object^ sender, System::EventArgs^ e)
 {
 	sunFlower->Temperature = (Temperatures)(temperatureBarSunflower->Value);
-	sunFlower->conditionCheck();
 	progressBar2->Value = sunFlower->Progress;
 
 	redraw(sunFlower, pictureBox2);
@@ -181,14 +173,13 @@ System::Void Flower::MyForm::temperatureBarSunflower_ValueChanged(System::Object
 System::Void Flower::MyForm::dayTimeBarSunflower_ValueChanged(System::Object^ sender, System::EventArgs^ e)
 {
 	sunFlower->changeTime((TimesOfDay)(dayTimeBarSunflower->Value));
-	sunFlower->conditionCheck();
 
 	redraw(sunFlower, pictureBox2);
 }
 
 System::Void Flower::MyForm::seasonBarSunflower_ValueChanged(System::Object^ sender, System::EventArgs^ e)
 {
-	sunFlower->Season = (Seasons)(this->seasonBarSunflower->Value);
+	sunFlower->changeSeason((Seasons)(this->seasonBarSunflower->Value));
 	sunFlower->findNewFlower();
 	switch (sunFlower->Season)
 	{
@@ -219,7 +210,6 @@ System::Void Flower::MyForm::seasonBarSunflower_ValueChanged(System::Object^ sen
 	default:
 		break;
 	}
-	sunFlower->conditionCheck();
 	progressBar2->Value = sunFlower->Progress;
 
 	redraw(sunFlower, pictureBox2);
@@ -229,7 +219,6 @@ System::Void Flower::MyForm::buttonSeeds_Click(System::Object^ sender, System::E
 {
 	if (sunFlower->Alive) {
 		sunFlower->takeSeeds();
-		sunFlower->conditionCheck();
 		progressBar2->Value = sunFlower->Progress;
 
 		redraw(sunFlower, pictureBox2);
@@ -239,7 +228,6 @@ System::Void Flower::MyForm::buttonSeeds_Click(System::Object^ sender, System::E
 System::Void Flower::MyForm::buttonNewSunflower_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	sunFlower->findNewFlower();
-	sunFlower->conditionCheck();
 	progressBar2->Value = sunFlower->Progress;
 
 	redraw(sunFlower, pictureBox2);
@@ -248,7 +236,6 @@ System::Void Flower::MyForm::buttonNewSunflower_Click(System::Object^ sender, Sy
 System::Void Flower::MyForm::buttonWaterSunflower_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	sunFlower->water();
-	sunFlower->conditionCheck();
 	progressBar2->Value = sunFlower->Progress;
 
 	redraw(sunFlower, pictureBox2);
