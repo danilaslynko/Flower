@@ -740,25 +740,28 @@ namespace Flower {
 
 		}
 #pragma endregion
-	Flowers^ pinkFlower = gcnew Flowers;
-	SFlower^ sunFlower = gcnew SFlower;
-	private: void redraw(Flowers^ flower, PictureBox^ pictureBox);
-	private: void eventWithoutMessageHandler(Flowers^ flower, String^ path);
-	private: void eventWithMessageHandler(Flowers^ flower, String^ path, String^ message);
-	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void temperatureBarFlower_ValueChanged(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void dayTimeBarFlower_ValueChanged(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void seasonBarFlower_ValueChanged(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void buttonNewFlower_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void buttonWaterFlower_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void tabControl1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void timer2_Tick(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void temperatureBarSunflower_ValueChanged(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void dayTimeBarSunflower_ValueChanged(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void seasonBarSunflower_ValueChanged(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void buttonSeeds_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void buttonNewSunflower_Click(System::Object^ sender, System::EventArgs^ e);
-	private: System::Void buttonWaterSunflower_Click(System::Object^ sender, System::EventArgs^ e);
+	protected:
+		Flowers^ pinkFlower = gcnew Flowers;
+		SFlower^ sunFlower = gcnew SFlower;
+
+	private:
+		void redraw(Flowers^ flower, PictureBox^ pictureBox);
+		void eventWithoutMessageHandler(Flowers^ flower, String^ path);
+		void eventWithMessageHandler(Flowers^ flower, String^ path, String^ message);
+		System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e);
+		System::Void temperatureBarFlower_ValueChanged(System::Object^ sender, System::EventArgs^ e);
+		System::Void dayTimeBarFlower_ValueChanged(System::Object^ sender, System::EventArgs^ e);
+		System::Void seasonBarFlower_ValueChanged(System::Object^ sender, System::EventArgs^ e);
+		System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e);
+		System::Void buttonNewFlower_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void buttonWaterFlower_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void tabControl1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e);
+		System::Void timer2_Tick(System::Object^ sender, System::EventArgs^ e);
+		System::Void temperatureBarSunflower_ValueChanged(System::Object^ sender, System::EventArgs^ e);
+		System::Void dayTimeBarSunflower_ValueChanged(System::Object^ sender, System::EventArgs^ e);
+		System::Void seasonBarSunflower_ValueChanged(System::Object^ sender, System::EventArgs^ e);
+		System::Void buttonSeeds_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void buttonNewSunflower_Click(System::Object^ sender, System::EventArgs^ e);
+		System::Void buttonWaterSunflower_Click(System::Object^ sender, System::EventArgs^ e);
 	};
 };
