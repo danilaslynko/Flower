@@ -6,6 +6,20 @@
 using namespace std;
 using namespace System;
 
+enum GrowthStage : byte {
+	MIDDLE = 1,
+	BIG = 2,
+	RIPENED = 3,
+	HARVESTED = 4,
+	LITTLE = 5
+};
+
+enum ReasonOfDeath : byte {
+	FROZEN = 1,
+	EATEN = 2,
+	WITHERED = 3
+};
+
 enum Seasons : byte {
 	WINTER = 1,
 	SPRING = 2,
@@ -27,23 +41,16 @@ enum Temperatures : byte {
 ref class Flowers { // Класс-батька
 
 public:
-	delegate void LocalEventHandler(Flowers^ flower, String^ path, String^ message); // Делегатик
-	delegate void NoMessageHandler(Flowers^ flower, String^ path); // Делегатик для смены дня и ночи
-	event LocalEventHandler^ FlowerIsDead; // Событие замерзания цветка
-	event NoMessageHandler^ DayChange; // Событие смены дня и ночи
-	event NoMessageHandler^ FlowerGrown; // Событие подрастания цветка
+	delegate void DeathEventHandler(Flowers^ flower, ReasonOfDeath reason, String^ message); // Делегатик
+	delegate void GrowEventHandler(Flowers^ flower, GrowthStage stage); // Делегатик для смены дня и ночи
+	event DeathEventHandler^ FlowerIsDead; // Событие замерзания цветка
+	event GrowEventHandler^ FlowerGrown; // Событие подрастания цветка
 
 private:
 	//Путь к картиночке
 	String^ path;
 	// Прогресс процесса
 	int progress;
-	// Температура
-	Temperatures temperature;
-	// Время суток
-	TimesOfDay dayTime;
-	// Время года
-	Seasons season;
 	// Шанс того, что цветок съеден
 	int chance;
 	// Цветочек жив
@@ -62,33 +69,6 @@ public:
 			return progress;
 		}
 	}
-	// Время суток
-	property TimesOfDay DayTime {
-		void set(TimesOfDay dayTime) {
-			this->dayTime = dayTime;
-		}
-		TimesOfDay get() {
-			return dayTime;
-		}
-	}
-	// Температура
-	property Temperatures Temperature {
-		void set(Temperatures temperature) {
-			this->temperature = temperature;
-		}
-		Temperatures get() {
-			return temperature;
-		}
-	}
-	// Время года
-	property Seasons Season {
-		void set(Seasons season) {
-			this->season = season;
-		}
-		Seasons get() {
-			return season;
-		}
-	}
 	// Картиночка
 	property String^ Path {
 		void set(String^ path) {
@@ -104,7 +84,7 @@ public:
 		void set(int treshold) {
 			Random^ rnd = gcnew Random();
 			this->chance = rnd->Next(0, 100);
- 			if (this->chance < treshold) {
+			if (this->chance < treshold) {
 				this->eat();
 			}
 		}
@@ -120,18 +100,12 @@ public:
 			return alive;
 		}
 	}
-	// Полить
-	virtual void water();
-	// Найти новый цветочек
-	virtual void findNewFlower();
 	// Съедание гусеницей
-	virtual void eat();
+	void eat();
 	// Дегидрация
-	virtual void degidrate();
+	void degidrate(Temperatures temperature);
 	// Расти
-	virtual void grow();
-	// Смена времени суток
-	virtual void changeTime(TimesOfDay dayTime);
-	// Проверка состояния цветка
-	virtual void changeSeason(Seasons season);
+	virtual void grow(Temperatures temperature);
+	// Реакция на смену времени года
+	virtual void reactOnEnvironment(Seasons season, Temperatures temperature);
 };

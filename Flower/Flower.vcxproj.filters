@@ -37,11 +37,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MyForm.resx">
-      <Filter>Файлы ресурсов</Filter>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Image Include="..\Pictures\Sunflower\Summer\SunFlowerSummerDay.png">
       <Filter>Файлы ресурсов</Filter>
     </Image>
@@ -103,6 +98,12 @@
       <Filter>Файлы ресурсов</Filter>
     </Image>
     <Image Include="..\Pictures\Sunflower\SunFlowerГусеничка.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\Pictures\Sunflower\Autumn\SunFlowerWithoutHead.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\Pictures\WateringCan.jpg">
       <Filter>Файлы ресурсов</Filter>
     </Image>
   </ItemGroup>

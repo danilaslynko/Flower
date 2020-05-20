@@ -92,6 +92,9 @@ namespace Flower {
 	private: System::Windows::Forms::Timer^ timer2;
 	private: System::Windows::Forms::Button^ buttonSeeds;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::PictureBox^ can;
+	private: System::Windows::Forms::PictureBox^ can2;
+
 	private: System::ComponentModel::IContainer^ components;
 	private:
 		/// <summary>
@@ -105,6 +108,7 @@ namespace Flower {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->Цветок = (gcnew System::Windows::Forms::TabPage());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
@@ -158,6 +162,8 @@ namespace Flower {
 			this->lblt2 = (gcnew System::Windows::Forms::Label());
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->timer2 = (gcnew System::Windows::Forms::Timer(this->components));
+			this->can = (gcnew System::Windows::Forms::PictureBox());
+			this->can2 = (gcnew System::Windows::Forms::PictureBox());
 			this->tabControl1->SuspendLayout();
 			this->Цветок->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -169,6 +175,8 @@ namespace Flower {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->temperatureBarSunflower))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->seasonBarSunflower))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dayTimeBarSunflower))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->can))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->can2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tabControl1
@@ -188,6 +196,7 @@ namespace Flower {
 			// Цветок
 			// 
 			this->Цветок->AllowDrop = true;
+			this->Цветок->Controls->Add(this->can);
 			this->Цветок->Controls->Add(this->pictureBox1);
 			this->Цветок->Controls->Add(this->progressBar1);
 			this->Цветок->Controls->Add(this->label26);
@@ -435,6 +444,7 @@ namespace Flower {
 			// 
 			// Подсолнух
 			// 
+			this->Подсолнух->Controls->Add(this->can2);
 			this->Подсолнух->Controls->Add(this->buttonSeeds);
 			this->Подсолнух->Controls->Add(this->progressBar2);
 			this->Подсолнух->Controls->Add(this->pictureBox2);
@@ -714,6 +724,26 @@ namespace Flower {
 			this->timer2->Interval = 1000;
 			this->timer2->Tick += gcnew System::EventHandler(this, &MyForm::timer2_Tick);
 			// 
+			// can
+			// 
+			this->can->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"can.Image")));
+			this->can->Location = System::Drawing::Point(484, 8);
+			this->can->Name = L"can";
+			this->can->Size = System::Drawing::Size(498, 292);
+			this->can->TabIndex = 36;
+			this->can->TabStop = false;
+			this->can->Visible = false;
+			// 
+			// can2
+			// 
+			this->can2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"can2.Image")));
+			this->can2->Location = System::Drawing::Point(484, 8);
+			this->can2->Name = L"can2";
+			this->can2->Size = System::Drawing::Size(498, 314);
+			this->can2->TabIndex = 41;
+			this->can2->TabStop = false;
+			this->can2->Visible = false;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -736,32 +766,88 @@ namespace Flower {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->temperatureBarSunflower))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->seasonBarSunflower))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dayTimeBarSunflower))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->can))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->can2))->EndInit();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+	private:
+		// Температура
+		Temperatures temperature;
+		// Время суток
+		TimesOfDay dayTime;
+		// Время года
+		Seasons season;
+
 	protected:
-		Flowers^ pinkFlower = gcnew Flowers;
-		SFlower^ sunFlower = gcnew SFlower;
+		Flowers^ pinkFlower = gcnew Flowers();
+		SFlower^ sunFlower = gcnew SFlower();
+
+	public:
+		// Время суток
+		property TimesOfDay DayTime {
+			void set(TimesOfDay dayTime) {
+				this->dayTime = dayTime;
+			}
+			TimesOfDay get() {
+				return dayTime;
+			}
+		}
+		// Температура
+		property Temperatures Temperature {
+			void set(Temperatures temperature) {
+				this->temperature = temperature;
+			}
+			Temperatures get() {
+				return temperature;
+			}
+		}
+		// Время года
+		property Seasons Season {
+			void set(Seasons season) {
+				this->season = season;
+			}
+			Seasons get() {
+				return season;
+			}
+		}
 
 	private:
+		// Переотрисовка
 		void redraw(Flowers^ flower, PictureBox^ pictureBox);
-		void eventWithoutMessageHandler(Flowers^ flower, String^ path);
-		void eventWithMessageHandler(Flowers^ flower, String^ path, String^ message);
+		void GrowEventHandler(Flowers^ flower, GrowthStage stage);
+		void DeathEventHandler(Flowers^ flower, ReasonOfDeath reason, String^ message);
+		void switchImageSunFlower();
+		// Загрузка формы
 		System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e);
+		// Смена температуры цветка
 		System::Void temperatureBarFlower_ValueChanged(System::Object^ sender, System::EventArgs^ e);
+		// Смена времени суток
 		System::Void dayTimeBarFlower_ValueChanged(System::Object^ sender, System::EventArgs^ e);
+		// Смена времени года
 		System::Void seasonBarFlower_ValueChanged(System::Object^ sender, System::EventArgs^ e);
+		// Тик таймера 1
 		System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e);
+		// Новый цветок
 		System::Void buttonNewFlower_Click(System::Object^ sender, System::EventArgs^ e);
+		// Полить цветок
 		System::Void buttonWaterFlower_Click(System::Object^ sender, System::EventArgs^ e);
+		// Смена вкладки
 		System::Void tabControl1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e);
+		// Тик таймера 2
 		System::Void timer2_Tick(System::Object^ sender, System::EventArgs^ e);
+		// Смена температуры подсолнуха
 		System::Void temperatureBarSunflower_ValueChanged(System::Object^ sender, System::EventArgs^ e);
+		// Смена времени суток подсолнуха
 		System::Void dayTimeBarSunflower_ValueChanged(System::Object^ sender, System::EventArgs^ e);
+		// Смена времени года подсолнуха
 		System::Void seasonBarSunflower_ValueChanged(System::Object^ sender, System::EventArgs^ e);
+		// Сбор семян
 		System::Void buttonSeeds_Click(System::Object^ sender, System::EventArgs^ e);
+		// Новый подсолнух
 		System::Void buttonNewSunflower_Click(System::Object^ sender, System::EventArgs^ e);
+		// Полить цветок
 		System::Void buttonWaterSunflower_Click(System::Object^ sender, System::EventArgs^ e);
 	};
 };

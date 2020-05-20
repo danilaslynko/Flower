@@ -159,6 +159,7 @@
     <Image Include="..\Pictures\Flower\Summer\FlowerГусеничка.png" />
     <Image Include="..\Pictures\Flower\Winter\FlowerFrozen.png" />
     <Image Include="..\Pictures\Sunflower\Autumn\SunFlowerAutumnFrozen.png" />
+    <Image Include="..\Pictures\Sunflower\Autumn\SunFlowerWithoutHead.png" />
     <Image Include="..\Pictures\Sunflower\Autumn\SunFlowerWithSeeds.png" />
     <Image Include="..\Pictures\Sunflower\Autumn\SunFlowerWithoutSeeds.png" />
     <Image Include="..\Pictures\Sunflower\Spring\SunFlowerSpringDay.png" />
@@ -169,6 +170,12 @@
     <Image Include="..\Pictures\Sunflower\Summer\SunFlowerSummerNight.png" />
     <Image Include="..\Pictures\Sunflower\Winter\SunFlowerWinterFrozen.png" />
     <Image Include="..\Pictures\Sunflower\SunFlowerГусеничка.png" />
+    <Image Include="..\Pictures\WateringCan.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MyForm.resx">
+      <DependentUpon>MyForm.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
