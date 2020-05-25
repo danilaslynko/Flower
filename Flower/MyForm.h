@@ -79,22 +79,20 @@ namespace Flower {
 	private: System::Windows::Forms::Label^ label31;
 	private: System::Windows::Forms::Label^ label32;
 	private: System::Windows::Forms::Label^ labelParamSunflower;
-
 	private: System::Windows::Forms::Label^ label27;
 	private: System::Windows::Forms::Label^ label28;
 	private: System::Windows::Forms::Label^ label29;
 	private: System::Windows::Forms::TrackBar^ temperatureBarSunflower;
 	private: System::Windows::Forms::Label^ label25;
-	private: System::Windows::Forms::Timer^ timer1;
 	private: System::Windows::Forms::ProgressBar^ progressBar1;
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::ProgressBar^ progressBar2;
-	private: System::Windows::Forms::Timer^ timer2;
 	private: System::Windows::Forms::Button^ buttonSeeds;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::PictureBox^ can;
 	private: System::Windows::Forms::PictureBox^ can2;
-
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::Label^ label7;
 	private: System::ComponentModel::IContainer^ components;
 	private:
 		/// <summary>
@@ -107,10 +105,10 @@ namespace Flower {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->Цветок = (gcnew System::Windows::Forms::TabPage());
+			this->can = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->progressBar1 = (gcnew System::Windows::Forms::ProgressBar());
 			this->label26 = (gcnew System::Windows::Forms::Label());
@@ -135,6 +133,7 @@ namespace Flower {
 			this->dayTimeBarFlower = (gcnew System::Windows::Forms::TrackBar());
 			this->seasonBarFlower = (gcnew System::Windows::Forms::TrackBar());
 			this->Подсолнух = (gcnew System::Windows::Forms::TabPage());
+			this->can2 = (gcnew System::Windows::Forms::PictureBox());
 			this->buttonSeeds = (gcnew System::Windows::Forms::Button());
 			this->progressBar2 = (gcnew System::Windows::Forms::ProgressBar());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
@@ -160,23 +159,21 @@ namespace Flower {
 			this->dayTimeBarSunflower = (gcnew System::Windows::Forms::TrackBar());
 			this->lblw2 = (gcnew System::Windows::Forms::Label());
 			this->lblt2 = (gcnew System::Windows::Forms::Label());
-			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
-			this->timer2 = (gcnew System::Windows::Forms::Timer(this->components));
-			this->can = (gcnew System::Windows::Forms::PictureBox());
-			this->can2 = (gcnew System::Windows::Forms::PictureBox());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->Цветок->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->can))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->temperatureBarFlower))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dayTimeBarFlower))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->seasonBarFlower))->BeginInit();
 			this->Подсолнух->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->can2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->temperatureBarSunflower))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->seasonBarSunflower))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dayTimeBarSunflower))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->can))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->can2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tabControl1
@@ -196,6 +193,7 @@ namespace Flower {
 			// Цветок
 			// 
 			this->Цветок->AllowDrop = true;
+			this->Цветок->Controls->Add(this->label6);
 			this->Цветок->Controls->Add(this->can);
 			this->Цветок->Controls->Add(this->pictureBox1);
 			this->Цветок->Controls->Add(this->progressBar1);
@@ -228,6 +226,16 @@ namespace Flower {
 			this->Цветок->Text = L"Цветок";
 			this->Цветок->UseVisualStyleBackColor = true;
 			// 
+			// can
+			// 
+			this->can->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"can.Image")));
+			this->can->Location = System::Drawing::Point(484, 8);
+			this->can->Name = L"can";
+			this->can->Size = System::Drawing::Size(498, 292);
+			this->can->TabIndex = 36;
+			this->can->TabStop = false;
+			this->can->Visible = false;
+			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->Location = System::Drawing::Point(6, 8);
@@ -238,7 +246,7 @@ namespace Flower {
 			// 
 			// progressBar1
 			// 
-			this->progressBar1->Location = System::Drawing::Point(494, 323);
+			this->progressBar1->Location = System::Drawing::Point(494, 355);
 			this->progressBar1->Maximum = 30;
 			this->progressBar1->Name = L"progressBar1";
 			this->progressBar1->Size = System::Drawing::Size(482, 40);
@@ -248,7 +256,7 @@ namespace Flower {
 			// label26
 			// 
 			this->label26->AutoSize = true;
-			this->label26->Location = System::Drawing::Point(914, 366);
+			this->label26->Location = System::Drawing::Point(914, 398);
 			this->label26->Name = L"label26";
 			this->label26->Size = System::Drawing::Size(65, 17);
 			this->label26->TabIndex = 33;
@@ -257,7 +265,7 @@ namespace Flower {
 			// label25
 			// 
 			this->label25->AutoSize = true;
-			this->label25->Location = System::Drawing::Point(714, 366);
+			this->label25->Location = System::Drawing::Point(714, 398);
 			this->label25->Name = L"label25";
 			this->label25->Size = System::Drawing::Size(65, 17);
 			this->label25->TabIndex = 32;
@@ -266,7 +274,7 @@ namespace Flower {
 			// label24
 			// 
 			this->label24->AutoSize = true;
-			this->label24->Location = System::Drawing::Point(494, 366);
+			this->label24->Location = System::Drawing::Point(494, 398);
 			this->label24->Name = L"label24";
 			this->label24->Size = System::Drawing::Size(56, 17);
 			this->label24->TabIndex = 31;
@@ -444,6 +452,7 @@ namespace Flower {
 			// 
 			// Подсолнух
 			// 
+			this->Подсолнух->Controls->Add(this->label7);
 			this->Подсолнух->Controls->Add(this->can2);
 			this->Подсолнух->Controls->Add(this->buttonSeeds);
 			this->Подсолнух->Controls->Add(this->progressBar2);
@@ -478,6 +487,16 @@ namespace Flower {
 			this->Подсолнух->Text = L"Подсолнух";
 			this->Подсолнух->UseVisualStyleBackColor = true;
 			// 
+			// can2
+			// 
+			this->can2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"can2.Image")));
+			this->can2->Location = System::Drawing::Point(484, 8);
+			this->can2->Name = L"can2";
+			this->can2->Size = System::Drawing::Size(498, 314);
+			this->can2->TabIndex = 41;
+			this->can2->TabStop = false;
+			this->can2->Visible = false;
+			// 
 			// buttonSeeds
 			// 
 			this->buttonSeeds->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
@@ -494,7 +513,7 @@ namespace Flower {
 			// 
 			// progressBar2
 			// 
-			this->progressBar2->Location = System::Drawing::Point(494, 348);
+			this->progressBar2->Location = System::Drawing::Point(494, 376);
 			this->progressBar2->Maximum = 30;
 			this->progressBar2->Name = L"progressBar2";
 			this->progressBar2->Size = System::Drawing::Size(485, 40);
@@ -512,7 +531,7 @@ namespace Flower {
 			// label30
 			// 
 			this->label30->AutoSize = true;
-			this->label30->Location = System::Drawing::Point(911, 396);
+			this->label30->Location = System::Drawing::Point(911, 424);
 			this->label30->Name = L"label30";
 			this->label30->Size = System::Drawing::Size(65, 17);
 			this->label30->TabIndex = 38;
@@ -521,7 +540,7 @@ namespace Flower {
 			// label31
 			// 
 			this->label31->AutoSize = true;
-			this->label31->Location = System::Drawing::Point(708, 396);
+			this->label31->Location = System::Drawing::Point(708, 424);
 			this->label31->Name = L"label31";
 			this->label31->Size = System::Drawing::Size(65, 17);
 			this->label31->TabIndex = 37;
@@ -530,7 +549,7 @@ namespace Flower {
 			// label32
 			// 
 			this->label32->AutoSize = true;
-			this->label32->Location = System::Drawing::Point(491, 396);
+			this->label32->Location = System::Drawing::Point(491, 424);
 			this->label32->Name = L"label32";
 			this->label32->Size = System::Drawing::Size(56, 17);
 			this->label32->TabIndex = 36;
@@ -714,35 +733,23 @@ namespace Flower {
 			this->lblt2->TabIndex = 3;
 			this->lblt2->Text = L"Температура";
 			// 
-			// timer1
+			// label6
 			// 
-			this->timer1->Interval = 1000;
-			this->timer1->Tick += gcnew System::EventHandler(this, &MyForm::timer1_Tick);
+			this->label6->AutoSize = true;
+			this->label6->Location = System::Drawing::Point(494, 335);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(124, 17);
+			this->label6->TabIndex = 37;
+			this->label6->Text = L"Влажность почвы";
 			// 
-			// timer2
+			// label7
 			// 
-			this->timer2->Interval = 1000;
-			this->timer2->Tick += gcnew System::EventHandler(this, &MyForm::timer2_Tick);
-			// 
-			// can
-			// 
-			this->can->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"can.Image")));
-			this->can->Location = System::Drawing::Point(484, 8);
-			this->can->Name = L"can";
-			this->can->Size = System::Drawing::Size(498, 292);
-			this->can->TabIndex = 36;
-			this->can->TabStop = false;
-			this->can->Visible = false;
-			// 
-			// can2
-			// 
-			this->can2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"can2.Image")));
-			this->can2->Location = System::Drawing::Point(484, 8);
-			this->can2->Name = L"can2";
-			this->can2->Size = System::Drawing::Size(498, 314);
-			this->can2->TabIndex = 41;
-			this->can2->TabStop = false;
-			this->can2->Visible = false;
+			this->label7->AutoSize = true;
+			this->label7->Location = System::Drawing::Point(491, 356);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(124, 17);
+			this->label7->TabIndex = 42;
+			this->label7->Text = L"Влажность почвы";
 			// 
 			// MyForm
 			// 
@@ -756,69 +763,35 @@ namespace Flower {
 			this->tabControl1->ResumeLayout(false);
 			this->Цветок->ResumeLayout(false);
 			this->Цветок->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->can))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->temperatureBarFlower))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dayTimeBarFlower))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->seasonBarFlower))->EndInit();
 			this->Подсолнух->ResumeLayout(false);
 			this->Подсолнух->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->can2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->temperatureBarSunflower))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->seasonBarSunflower))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dayTimeBarSunflower))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->can))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->can2))->EndInit();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	private:
-		// Температура
-		Temperatures temperature;
-		// Время суток
-		TimesOfDay dayTime;
-		// Время года
-		Seasons season;
-
 	protected:
-		Flowers^ pinkFlower = gcnew Flowers();
-		SFlower^ sunFlower = gcnew SFlower();
-
-	public:
-		// Время суток
-		property TimesOfDay DayTime {
-			void set(TimesOfDay dayTime) {
-				this->dayTime = dayTime;
-			}
-			TimesOfDay get() {
-				return dayTime;
-			}
-		}
-		// Температура
-		property Temperatures Temperature {
-			void set(Temperatures temperature) {
-				this->temperature = temperature;
-			}
-			Temperatures get() {
-				return temperature;
-			}
-		}
-		// Время года
-		property Seasons Season {
-			void set(Seasons season) {
-				this->season = season;
-			}
-			Seasons get() {
-				return season;
-			}
-		}
+		Flowers^ pinkFlower;
+		SFlower^ sunFlower;
+		FlowerEnvironment^ sunFlowerEnvironment;
+		FlowerEnvironment^ pinkFlowerEnvironment;
 
 	private:
 		// Переотрисовка
 		void redraw(Flowers^ flower, PictureBox^ pictureBox);
 		void GrowEventHandler(Flowers^ flower, GrowthStage stage);
 		void DeathEventHandler(Flowers^ flower, ReasonOfDeath reason, String^ message);
-		void switchImageSunFlower();
+		void switchImagePinkFlower();
+		void switchImageSunflower();
 		// Загрузка формы
 		System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e);
 		// Смена температуры цветка
@@ -827,16 +800,12 @@ namespace Flower {
 		System::Void dayTimeBarFlower_ValueChanged(System::Object^ sender, System::EventArgs^ e);
 		// Смена времени года
 		System::Void seasonBarFlower_ValueChanged(System::Object^ sender, System::EventArgs^ e);
-		// Тик таймера 1
-		System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e);
 		// Новый цветок
 		System::Void buttonNewFlower_Click(System::Object^ sender, System::EventArgs^ e);
 		// Полить цветок
 		System::Void buttonWaterFlower_Click(System::Object^ sender, System::EventArgs^ e);
 		// Смена вкладки
 		System::Void tabControl1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e);
-		// Тик таймера 2
-		System::Void timer2_Tick(System::Object^ sender, System::EventArgs^ e);
 		// Смена температуры подсолнуха
 		System::Void temperatureBarSunflower_ValueChanged(System::Object^ sender, System::EventArgs^ e);
 		// Смена времени суток подсолнуха
@@ -849,5 +818,7 @@ namespace Flower {
 		System::Void buttonNewSunflower_Click(System::Object^ sender, System::EventArgs^ e);
 		// Полить цветок
 		System::Void buttonWaterSunflower_Click(System::Object^ sender, System::EventArgs^ e);
-	};
+		void OnTickSunflower(System::Object^ sender, System::EventArgs^ e);
+		void OnTickFlower(System::Object^ sender, System::EventArgs^ e);
+};
 };

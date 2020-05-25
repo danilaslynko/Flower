@@ -1,64 +1,68 @@
 #include "Sunflower.h"
 
 SFlower::SFlower() {
+	this->Timer = gcnew System::Windows::Forms::Timer();
+	this->Timer->Tick += gcnew System::EventHandler(this, &SFlower::OnTick);
+	this->Timer->Interval = 1000;
 	this->Progress = 0;
 	this->Alive = true;
+	this->Timer->Enabled = false;
 }
 
 SFlower::~SFlower()
 {
+	this->Timer = nullptr;
 }
 
-void SFlower::reactOnEnvironment(Seasons season, Temperatures temperature)
+void SFlower::reactOnEnvironment(FlowerEnvironment^ env)
 {
-	switch (season)
+	switch (env->Season)
 	{
 	case WINTER:
-		FlowerIsDead(
-			this,
-			FROZEN,
-			"Зимой подсолнуху плохо :(");
-		break;
+		die(FROZEN);
 	case SPRING:
-		if (temperature == COLD) {
-			FlowerIsDead(
-				this,
-				FROZEN,
-				"Подсолнух замерз :(");
+		Progress = 0;
+		Stage = LITTLE;
+		if (env->Temperature == COLD) {
+			die(FROZEN);
 		}
+		break;
+	case SUMMER:
+		Progress = 30;
+		Stage = MIDDLE;
 		break;
 	case AUTUMN:
-		if (temperature == COLD) {
-			FlowerIsDead(
-				this,
-				FROZEN,
-				"Подсолнух замерз :("
-			);
+		Progress = 60;
+		Stage = BIG;
+		if (env->Temperature == COLD) {
+			die(FROZEN);
 		}
+		Stage = BIG;
+		break;
 	default:
 		break;
 	}
 }
 
-void SFlower::grow(Temperatures temperature)
+void SFlower::grow()
 {
-	if (temperature != COLD) {
-		if (Progress < 30) {
-			Progress += (int)temperature;
-		}
-		if (Progress > 30) {
-			Progress = 30;
-		}
+	if (Progress <= 90) {
+		Progress += 2;
 	}
-	else {
-		FlowerIsDead(
-			this,
-			FROZEN,
-			"Холодная нынче осень, подсолнух замерз :(");
+	switch (Progress) {
+	case 30: 
+		Stage = MIDDLE;
+		break;
+	case 60:
+		Stage = BIG;
+		break;
+	case 90:
+		Stage = RIPENED;
+		break;
 	}
-	if (Progress == 30) {
-		FlowerGrown(
-			this,
-			RIPENED);
-	}
+}
+
+void SFlower::OnTick(System::Object^ sender, System::EventArgs^ e)
+{
+	if (Stage != HARVESTED) grow();
 }

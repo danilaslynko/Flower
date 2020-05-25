@@ -1,42 +1,11 @@
 #pragma once
 #include <iostream>
-#include <windows.h>
 #include <time.h>
+#include "helperClasses.h"
+#include "Environment.h"
 
 using namespace std;
 using namespace System;
-
-enum GrowthStage : byte {
-	MIDDLE = 1,
-	BIG = 2,
-	RIPENED = 3,
-	HARVESTED = 4,
-	LITTLE = 5
-};
-
-enum ReasonOfDeath : byte {
-	FROZEN = 1,
-	EATEN = 2,
-	WITHERED = 3
-};
-
-enum Seasons : byte {
-	WINTER = 1,
-	SPRING = 2,
-	SUMMER = 3,
-	AUTUMN = 4
-};
-
-enum TimesOfDay : byte {
-	DAY = 1,
-	NIGHT = 2
-};
-
-enum Temperatures : byte {
-	COLD = 1,
-	FINE = 2,
-	HOT = 3
-};
 
 ref class Flowers { // Класс-батька
 
@@ -47,7 +16,7 @@ public:
 	event GrowEventHandler^ FlowerGrown; // Событие подрастания цветка
 
 private:
-	//Путь к картиночке
+	// Путь к картиночке
 	String^ path;
 	// Прогресс процесса
 	int progress;
@@ -55,8 +24,14 @@ private:
 	int chance;
 	// Цветочек жив
 	bool alive;
+	// Стадия роста цветка
+	GrowthStage stage;
+	// Причина смерти
+	ReasonOfDeath reason;
 
 public:
+	// Таймер для роста цветуечка
+	Timer^ Timer;
 	//Конструктор и деструктор
 	Flowers();
 	~Flowers();
@@ -69,6 +44,20 @@ public:
 			return progress;
 		}
 	}
+	// Причина смерти
+	property ReasonOfDeath Reason {
+		void set(ReasonOfDeath reason) {
+			this->reason = reason;
+			FlowerIsDead(
+				this,
+				reason,
+				"Цветок умер :("
+			);
+		}
+		ReasonOfDeath get() {
+			return reason;
+		}
+	}
 	// Картиночка
 	property String^ Path {
 		void set(String^ path) {
@@ -78,18 +67,16 @@ public:
 			return this->path;
 		}
 	}
-	// Шанс того, что цветок сожрали. Реализован через рандом.
-	// Передаваемый параметр от 0 до 100 (шанс сжирания).
-	property int Chance {
-		void set(int treshold) {
-			Random^ rnd = gcnew Random();
-			this->chance = rnd->Next(0, 100);
-			if (this->chance < treshold) {
-				this->eat();
-			}
+	property GrowthStage Stage {
+		void set(GrowthStage stage) {
+			this->stage = stage;
+			FlowerGrown(
+				this,
+				stage
+			);
 		}
-		int get() {
-			return chance;
+		GrowthStage get() {
+			return stage;
 		}
 	}
 	property bool Alive {
@@ -100,12 +87,11 @@ public:
 			return alive;
 		}
 	}
-	// Съедание гусеницей
-	void eat();
-	// Дегидрация
-	void degidrate(Temperatures temperature);
+	// Умереть
+	void die(ReasonOfDeath reason);
 	// Расти
-	virtual void grow(Temperatures temperature);
+	virtual void grow();
 	// Реакция на смену времени года
-	virtual void reactOnEnvironment(Seasons season, Temperatures temperature);
+	virtual void reactOnEnvironment(FlowerEnvironment^ env);
+	virtual void OnTick(System::Object^ sender, System::EventArgs^ e);
 };

@@ -9,95 +9,58 @@ using namespace System::Drawing;
 
 /*Конструкторы..*/
 Flowers::Flowers() {
+	this->Timer = gcnew System::Windows::Forms::Timer();
+	this->Timer->Tick += gcnew System::EventHandler(this, &Flowers::OnTick);
 	this->Progress = 0;
 	this->Alive = true;
+	this->Timer->Interval = 1000;
+	this->Timer->Enabled = false;
 }
 
-/*.. и деструкторы*/
 Flowers::~Flowers()
 {
+	this->Timer = nullptr;
 }
 
 /*методы..*/
-void Flowers::eat()
+void Flowers::die(ReasonOfDeath reason)
 {
-	FlowerIsDead(
-		this,
-		EATEN,
-		"Цветочек съела гусеница :(");
+	if (Alive) {
+		Alive = false;
+		Progress = 0;
+		Reason = reason;
+	}
 }
 
-void Flowers::degidrate(Temperatures temperature)
+void Flowers::grow()
 {
 	if (Progress < 30) {
-		Progress += (int)temperature;
-	}
-	if (Progress > 30) {
-		Progress = 30;
-	}
-	if (Progress == 30) {
-		FlowerIsDead(
-			this,
-			WITHERED,
-			"Цветочек засох :(");
-	}
-}
-
-void Flowers::grow(Temperatures temperature)
-{
-	if (temperature != COLD) {
-		if (Progress < 30) {
-			Progress += (int)temperature;
-		}
-		if (Progress > 30) {
-			Progress = 30;
-		}
-	}
-	else {
-		FlowerIsDead(
-			this,
-			FROZEN,
-			"Цветочек замерз :(");
+		Progress += 2;
 	}
 	if (Progress == 18) {
-		FlowerGrown(
-			this,
-			MIDDLE);
+		Stage = MIDDLE;
 	}
 	if (Progress == 30) {
-		FlowerGrown(
-			this,
-			BIG);
+		Stage = BIG;
 	}
 }
 
-void Flowers::reactOnEnvironment(Seasons season, Temperatures temperature)
+void Flowers::reactOnEnvironment(FlowerEnvironment^ env)
 {
-	switch (season)
+	switch (env->Season)
 	{
 	case SPRING:
-		FlowerGrown(
-			this,
-			LITTLE);
+		if (env->Temperature == COLD) {
+			die(FROZEN);
+		}
+		Stage = LITTLE;
 		break;
 	case WINTER:
-		FlowerIsDead(
-			this,
-			FROZEN,
-			"Зимой цветы не растут");
+		die(FROZEN);
 		break;
 	case AUTUMN:
-		if (temperature == COLD) {
-			FlowerIsDead(
-				this,
-				FROZEN,
-				"Холодная нынче осень, цветочек замерз :(");
-		}
-		else {
-			FlowerIsDead(
-				this,
-				WITHERED,
-				"Осенью цветы засыхают");
+		if (env->Temperature == COLD) {
+			die(FROZEN);
 		}
 		break;
 	default:
@@ -105,3 +68,10 @@ void Flowers::reactOnEnvironment(Seasons season, Temperatures temperature)
 	}
 }
 /*.. и иже с ними*/
+
+void Flowers::OnTick(System::Object^ sender, System::EventArgs^ e)
+{
+	if (Stage == LITTLE || Stage == MIDDLE) {
+		grow();
+	}
+}

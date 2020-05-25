@@ -6,7 +6,7 @@ public:
 	SFlower();
 	~SFlower();
 	// Переопределенные методы
-	virtual void reactOnEnvironment(Seasons season, Temperatures temperature) override;
-	virtual void grow(Temperatures temperature) override;
+	virtual void reactOnEnvironment(FlowerEnvironment^ env) override;
+	virtual void grow() override;
+	virtual void OnTick(System::Object^ sender, System::EventArgs^ e) override;
 };
-

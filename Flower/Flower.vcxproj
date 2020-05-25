@@ -136,12 +136,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Environment.cpp" />
     <ClCompile Include="Flower.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="Sunflower.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Environment.h" />
     <ClInclude Include="Flower.h" />
+    <ClInclude Include="helperClasses.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -162,6 +165,7 @@
     <Image Include="..\Pictures\Sunflower\Autumn\SunFlowerWithoutHead.png" />
     <Image Include="..\Pictures\Sunflower\Autumn\SunFlowerWithSeeds.png" />
     <Image Include="..\Pictures\Sunflower\Autumn\SunFlowerWithoutSeeds.png" />
+    <Image Include="..\Pictures\Sunflower\Spring\SunFlowerDead.png" />
     <Image Include="..\Pictures\Sunflower\Spring\SunFlowerSpringDay.png" />
     <Image Include="..\Pictures\Sunflower\Spring\SunFlowerSpringFrozen.png" />
     <Image Include="..\Pictures\Sunflower\Spring\SunFlowerSpringNight.png" />
