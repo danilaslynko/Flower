@@ -74,7 +74,14 @@ void Flower::MyForm::switchImagePinkFlower()
 			}
 		}
 		else {
-			pinkFlower->Path = "..\\Pictures\\Flower\\Spring\\FlowerSpringFrozen.png";
+			switch (pinkFlower->Reason) {
+			case FROZEN:
+				pinkFlower->Path = "..\\Pictures\\Flower\\Spring\\FlowerSpringFrozen.png";
+				break;
+			case WITHERED:
+				pinkFlower->Path = "..\\Pictures\\Flower\\Spring\\FlowerDead.png";
+				break;
+			}
 		}
 		break;
 	case SUMMER:

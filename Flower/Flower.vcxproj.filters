@@ -61,9 +61,6 @@
     <Image Include="..\Pictures\Sunflower\Summer\SunFlowerDead.png">
       <Filter>Файлы ресурсов</Filter>
     </Image>
-    <Image Include="..\Pictures\Flower\Summer\FlowerDead.png">
-      <Filter>Файлы ресурсов</Filter>
-    </Image>
     <Image Include="..\Pictures\Sunflower\Winter\SunFlowerWinterFrozen.png">
       <Filter>Файлы ресурсов</Filter>
     </Image>
@@ -116,6 +113,12 @@
       <Filter>Файлы ресурсов</Filter>
     </Image>
     <Image Include="..\Pictures\Sunflower\Spring\SunFlowerDead.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\Pictures\Flower\Spring\FlowerDead.png">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+    <Image Include="..\Pictures\Flower\Summer\FlowerDead.png">
       <Filter>Файлы ресурсов</Filter>
     </Image>
   </ItemGroup>

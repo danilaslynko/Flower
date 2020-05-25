@@ -48,10 +48,22 @@ public:
 	property ReasonOfDeath Reason {
 		void set(ReasonOfDeath reason) {
 			this->reason = reason;
+			String^ message;
+			switch (reason) {
+			case FROZEN:
+				message = "Цветочек замерз :(";
+				break;
+			case WITHERED:
+				message = "Цветочек засох :(";
+				break;
+			case EATEN:
+				message = "Гусеница сожрала цветок :(";
+				break;
+			}
 			FlowerIsDead(
 				this,
 				reason,
-				"Цветок умер :("
+				message
 			);
 		}
 		ReasonOfDeath get() {

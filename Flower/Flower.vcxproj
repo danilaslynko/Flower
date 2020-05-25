@@ -151,13 +151,14 @@
     <ClInclude Include="Sunflower.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\Pictures\Flower\Spring\FlowerDead.png" />
     <Image Include="..\Pictures\Flower\Spring\FlowerSpringDay.png" />
     <Image Include="..\Pictures\Flower\Spring\FlowerSpringFrozen.png" />
     <Image Include="..\Pictures\Flower\Spring\FlowerLittle.png" />
     <Image Include="..\Pictures\Flower\Spring\FlowerMiddle.png" />
     <Image Include="..\Pictures\Flower\Spring\FlowerSpringNight.png" />
-    <Image Include="..\Pictures\Flower\Summer\FlowerSummerDay.png" />
     <Image Include="..\Pictures\Flower\Summer\FlowerDead.png" />
+    <Image Include="..\Pictures\Flower\Summer\FlowerSummerDay.png" />
     <Image Include="..\Pictures\Flower\Summer\FlowerSummerNight.png" />
     <Image Include="..\Pictures\Flower\Summer\FlowerГусеничка.png" />
     <Image Include="..\Pictures\Flower\Winter\FlowerFrozen.png" />
