@@ -53,7 +53,9 @@ void Flowers::reactOnEnvironment(FlowerEnvironment^ env)
 		if (env->Temperature == COLD) {
 			die(FROZEN);
 		}
-		Stage = LITTLE;
+		if (!env->DayChanged) {
+			Stage = LITTLE;
+		}
 		break;
 	case WINTER:
 		die(FROZEN);

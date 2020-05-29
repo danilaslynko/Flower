@@ -18,6 +18,8 @@ private:
 	TimesOfDay dayTime;
 	// Время года
 	Seasons season;
+	// Флаг смены времени суток
+	bool dayChanged;
 	
 public:
 	delegate void DeadlyEventHandler(ReasonOfDeath);
@@ -26,11 +28,22 @@ public:
 	event ConditionsChangedHandler^ ConditionsChanges;
 	// Таймер для всякого
 	Timer^ Timer;
+	// Флаг смены времени суток
+	property bool DayChanged {
+		void set(bool dayChanged) {
+			this->dayChanged = dayChanged;
+		}
+		bool get() {
+			return dayChanged;
+		}
+	}
 	// Время суток
 	property TimesOfDay DayTime {
 		void set(TimesOfDay dayTime) {
 			this->dayTime = dayTime;
+			DayChanged = true;
 			ConditionsChanges(this);
+			DayChanged = false;
 		}
 		TimesOfDay get() {
 			return dayTime;
@@ -50,7 +63,7 @@ public:
 	property int SoilMoisture {
 		void set(int soilMoisture) {
 			this->soilMoisture = soilMoisture;
-
+			if (soilMoisture > 30) soilMoisture = 30;
 		}
 		int get() {
 			return soilMoisture;
