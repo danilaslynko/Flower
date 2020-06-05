@@ -34,6 +34,7 @@ public:
 	Timer^ Timer;
 	//Конструктор и деструктор
 	Flowers();
+	Flowers(FlowerEnvironment^ env);
 	~Flowers();
 	// Дегидрация
 	property int Progress {

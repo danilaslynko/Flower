@@ -62,8 +62,8 @@ public:
 	// Влажность почвы
 	property int SoilMoisture {
 		void set(int soilMoisture) {
-			this->soilMoisture = soilMoisture;
 			if (soilMoisture > 30) soilMoisture = 30;
+			this->soilMoisture = soilMoisture;
 		}
 		int get() {
 			return soilMoisture;

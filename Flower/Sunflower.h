@@ -3,7 +3,7 @@
 ref class SFlower : public Flowers { // Унаследованный класс
 public:
 	// Конструктор и деструктор
-	SFlower();
+	SFlower(FlowerEnvironment^ env);
 	~SFlower();
 	// Переопределенные методы
 	virtual void reactOnEnvironment(FlowerEnvironment^ env) override;

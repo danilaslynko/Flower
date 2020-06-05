@@ -191,9 +191,6 @@ void Flower::MyForm::switchImageSunflower()
 
 System::Void Flower::MyForm::MyForm_Load(System::Object^ sender, System::EventArgs^ e)
 {
-	pinkFlower = gcnew Flowers();
-	sunFlower = gcnew SFlower();
-
 	pinkFlowerEnvironment = gcnew FlowerEnvironment(
 		(Temperatures)temperatureBarFlower->Value,
 		(Seasons)seasonBarFlower->Value,
@@ -205,6 +202,9 @@ System::Void Flower::MyForm::MyForm_Load(System::Object^ sender, System::EventAr
 		(TimesOfDay)dayTimeBarSunflower->Value
 	);
 
+	pinkFlower = gcnew Flowers(pinkFlowerEnvironment);
+	sunFlower = gcnew SFlower(sunFlowerEnvironment);
+
 	sunFlower->Timer->Enabled = false;
 	pinkFlower->Timer->Enabled = true;
 	pinkFlowerEnvironment->Timer->Enabled = true;
@@ -215,12 +215,6 @@ System::Void Flower::MyForm::MyForm_Load(System::Object^ sender, System::EventAr
 
 	sunFlower->FlowerGrown += gcnew Flowers::GrowEventHandler(this, &Flower::MyForm::GrowEventHandler);
 	sunFlower->FlowerIsDead += gcnew Flowers::DeathEventHandler(this, &Flower::MyForm::DeathEventHandler);
-
-	pinkFlowerEnvironment->DeadlyEvent += gcnew FlowerEnvironment::DeadlyEventHandler(pinkFlower, &Flowers::die);
-	sunFlowerEnvironment->DeadlyEvent += gcnew FlowerEnvironment::DeadlyEventHandler(sunFlower, &SFlower::die);
-
-	pinkFlowerEnvironment->ConditionsChanges += gcnew FlowerEnvironment::ConditionsChangedHandler(pinkFlower, &Flowers::reactOnEnvironment);
-	sunFlowerEnvironment->ConditionsChanges += gcnew FlowerEnvironment::ConditionsChangedHandler(sunFlower, &SFlower::reactOnEnvironment);
 
 	switchImagePinkFlower();
 	switchImageSunflower();
@@ -265,9 +259,23 @@ System::Void Flower::MyForm::seasonBarFlower_ValueChanged(System::Object^ sender
 
 System::Void Flower::MyForm::buttonNewFlower_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	pinkFlower->Progress = 0;
-	pinkFlower->Alive = true;
-	pinkFlowerEnvironment->SoilMoisture = 30;
+	pinkFlower->~Flowers();
+	pinkFlowerEnvironment->~FlowerEnvironment();
+
+	pinkFlowerEnvironment = gcnew FlowerEnvironment(
+		(Temperatures)temperatureBarFlower->Value,
+		(Seasons)seasonBarFlower->Value,
+		(TimesOfDay)dayTimeBarFlower->Value
+	);
+	pinkFlower = gcnew Flowers(pinkFlowerEnvironment);
+
+	pinkFlower->Timer->Enabled = true;
+	pinkFlowerEnvironment->Timer->Enabled = true;
+
+	pinkFlower->FlowerGrown += gcnew Flowers::GrowEventHandler(this, &Flower::MyForm::GrowEventHandler);
+	pinkFlower->FlowerIsDead += gcnew Flowers::DeathEventHandler(this, &Flower::MyForm::DeathEventHandler);
+
+	pinkFlowerEnvironment->Timer->Tick += gcnew System::EventHandler(this, &Flower::MyForm::OnTickFlower);
 
 	pinkFlowerEnvironment->Season = (Seasons)seasonBarFlower->Value;
 	progressBar1->Value = pinkFlowerEnvironment->SoilMoisture;
@@ -393,9 +401,24 @@ System::Void Flower::MyForm::buttonSeeds_Click(System::Object^ sender, System::E
 
 System::Void Flower::MyForm::buttonNewSunflower_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	sunFlower->Progress = 0;
-	sunFlower->Alive = true;
-	sunFlowerEnvironment->SoilMoisture = 30;
+	sunFlowerEnvironment->~FlowerEnvironment();
+	sunFlower->~SFlower();
+
+	sunFlowerEnvironment = gcnew FlowerEnvironment(
+		(Temperatures)temperatureBarSunflower->Value,
+		(Seasons)seasonBarSunflower->Value,
+		(TimesOfDay)dayTimeBarSunflower->Value
+	);
+
+	sunFlower = gcnew SFlower(sunFlowerEnvironment);
+
+	sunFlower->Timer->Enabled = false;
+	sunFlowerEnvironment->Timer->Enabled = false;
+
+	sunFlower->FlowerGrown += gcnew Flowers::GrowEventHandler(this, &Flower::MyForm::GrowEventHandler);
+	sunFlower->FlowerIsDead += gcnew Flowers::DeathEventHandler(this, &Flower::MyForm::DeathEventHandler);
+
+	sunFlowerEnvironment->Timer->Tick += gcnew System::EventHandler(this, &Flower::MyForm::OnTickSunflower);
 
 	progressBar2->Value = sunFlowerEnvironment->SoilMoisture;
 	sunFlowerEnvironment->Season = (Seasons)seasonBarSunflower->Value;

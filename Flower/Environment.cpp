@@ -13,7 +13,7 @@ FlowerEnvironment::FlowerEnvironment(Temperatures temp, Seasons season, TimesOfD
 
 FlowerEnvironment::~FlowerEnvironment()
 {
-    this->Timer = nullptr;
+    this->Timer->~Timer();
 }
 
 void FlowerEnvironment::timerTick(System::Object^ sender, System::EventArgs^ e)

@@ -1,17 +1,19 @@
 #include "Sunflower.h"
 
-SFlower::SFlower() {
+SFlower::SFlower(FlowerEnvironment^ env) {
 	this->Timer = gcnew System::Windows::Forms::Timer();
 	this->Timer->Tick += gcnew System::EventHandler(this, &SFlower::OnTick);
 	this->Timer->Interval = 1000;
 	this->Progress = 0;
 	this->Alive = true;
 	this->Timer->Enabled = false;
+	env->DeadlyEvent += gcnew FlowerEnvironment::DeadlyEventHandler(this, &SFlower::die);
+	env->ConditionsChanges += gcnew FlowerEnvironment::ConditionsChangedHandler(this, &SFlower::reactOnEnvironment);
 }
 
 SFlower::~SFlower()
 {
-	this->Timer = nullptr;
+	this->Timer->~Timer();
 }
 
 void SFlower::reactOnEnvironment(FlowerEnvironment^ env)

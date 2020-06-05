@@ -7,19 +7,23 @@ using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
 
+Flowers::Flowers() {}
+
 /*Конструкторы..*/
-Flowers::Flowers() {
+Flowers::Flowers(FlowerEnvironment^ env) {
 	this->Timer = gcnew System::Windows::Forms::Timer();
 	this->Timer->Tick += gcnew System::EventHandler(this, &Flowers::OnTick);
 	this->Progress = 0;
 	this->Alive = true;
 	this->Timer->Interval = 1000;
 	this->Timer->Enabled = false;
+	env->DeadlyEvent += gcnew FlowerEnvironment::DeadlyEventHandler(this, &Flowers::die);
+	env->ConditionsChanges += gcnew FlowerEnvironment::ConditionsChangedHandler(this, &Flowers::reactOnEnvironment);
 }
 
 Flowers::~Flowers()
 {
-	this->Timer = nullptr;
+	this->Timer->~Timer();
 }
 
 /*методы..*/
